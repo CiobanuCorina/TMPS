@@ -1,10 +1,10 @@
 package com.company.BuilderAbstractFactory;
 
-public class SimpleHouseHouseBuilder implements HouseBuilder {
-    private House house;
+public class SimpleHouseBuilder implements ISimpleHouseBuilder {
+    private SimpleHouse house;
 
-    public SimpleHouseHouseBuilder() {
-        this.house = new House();
+    public SimpleHouseBuilder() {
+        this.house = new SimpleHouse();
     }
 
     @Override
@@ -29,7 +29,7 @@ public class SimpleHouseHouseBuilder implements HouseBuilder {
         house.setWindow("|[] | | []|[]|");
     }
 
-    public House getHouse() {
+    public SimpleHouse getHouse() {
         return house;
     }
 }

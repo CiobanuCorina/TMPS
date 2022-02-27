@@ -1,16 +1,24 @@
 package com.company.BuilderAbstractFactory;
 
 public class CarDirector {
-    private CarBuilder carBuilder;
+    private ISimpleCarBuilder ISimpleCarBuilder;
 
-    public void setCarBuilder(CarBuilder carBuilder) {
-        this.carBuilder = carBuilder;
+    public void setCarBuilder(ISimpleCarBuilder ISimpleCarBuilder) {
+        this.ISimpleCarBuilder = ISimpleCarBuilder;
     }
 
-    public void buildSimpleCar(CarBuilder carBuilder) {
-        carBuilder.setRoof();
-        carBuilder.setWindows();
-        carBuilder.setSkeleton();
-        carBuilder.setWheels();
+    public void buildSimpleCar(ISimpleCarBuilder ISimpleCarBuilder) {
+        ISimpleCarBuilder.setRoof();
+        ISimpleCarBuilder.setWindows();
+        ISimpleCarBuilder.setSkeleton();
+        ISimpleCarBuilder.setWheels();
+    }
+
+    public void buildLuxCar(ILuxCarBuilder iLuxCarBuilder) {
+        iLuxCarBuilder.setRoof();
+        iLuxCarBuilder.setWindows();
+        iLuxCarBuilder.setMirrors();
+        iLuxCarBuilder.setSkeleton();
+        iLuxCarBuilder.setWheels();
     }
 }

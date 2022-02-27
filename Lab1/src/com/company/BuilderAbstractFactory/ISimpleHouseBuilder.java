@@ -1,6 +1,6 @@
 package com.company.BuilderAbstractFactory;
 
-public interface HouseBuilder {
+public interface ISimpleHouseBuilder {
     public void setRoof();
     public void setWalls();
     public void setDoor();

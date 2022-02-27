@@ -1,6 +1,6 @@
 package com.company.BuilderAbstractFactory;
 
-public class LuxHouse extends House{
+public class LuxHouse extends House {
     private String garden;
 
     public void setGarden(String garden) {
@@ -8,8 +8,11 @@ public class LuxHouse extends House{
     }
 
     @Override
-    public String toString() {
-        return super.toString() + "\n" +
+    public String display() {
+        return this.roof + "\n" +
+                this.wall + "\n" +
+                this.window + "\n" +
+                this.door + "\n" +
                 this.garden;
     }
 }

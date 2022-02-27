@@ -1,10 +1,10 @@
 package com.company.BuilderAbstractFactory;
 
-public class House {
-    private String roof;
-    private String wall;
-    private String window;
-    private String door;
+public abstract class House {
+    protected String roof;
+    protected String wall;
+    protected String window;
+    protected String door;
 
     public void setRoof(String roof) {
         this.roof = roof;
@@ -22,11 +22,5 @@ public class House {
         this.door = door;
     }
 
-    @Override
-    public String toString() {
-        return this.roof + "\n" +
-                this.wall + "\n" +
-                this.window + "\n" +
-                this.door;
-    }
+    public abstract String display();
 }

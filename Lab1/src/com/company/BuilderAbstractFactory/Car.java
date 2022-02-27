@@ -1,14 +1,10 @@
 package com.company.BuilderAbstractFactory;
 
-public class Car {
-    private String roof;
-    private String windows;
-    private String skeleton;
-    private String wheels;
-
-    public String getWindows() {
-        return windows;
-    }
+public abstract class Car {
+    protected String roof;
+    protected String windows;
+    protected String skeleton;
+    protected String wheels;
 
     public void setRoof(String roof) {
         this.roof = roof;
@@ -18,27 +14,13 @@ public class Car {
         this.windows = windows;
     }
 
-    public String getSkeleton() {
-        return skeleton;
-    }
-
     public void setSkeleton(String skeleton) {
         this.skeleton = skeleton;
-    }
-
-    public String getWheels() {
-        return wheels;
     }
 
     public void setWheels(String wheels) {
         this.wheels = wheels;
     }
 
-    @Override
-    public String toString() {
-        return this.roof + "\n" +
-                this.windows + "\n" +
-                this.skeleton + "\n" +
-                this.wheels;
-    }
+    public abstract String display();
 }

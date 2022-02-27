@@ -1,6 +1,6 @@
 package com.company.BuilderAbstractFactory;
 
-public interface CarBuilder {
+public interface ISimpleCarBuilder {
     public void setWindows();
     public void setSkeleton();
     public void setWheels();

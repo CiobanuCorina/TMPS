@@ -4,9 +4,9 @@ public class TestBuilder {
     public static void main(String[] args) {
         HouseDirector director = new HouseDirector();
 
-        SimpleHouseHouseBuilder simpleHouseBuilder = new SimpleHouseHouseBuilder();
+        SimpleHouseBuilder simpleHouseBuilder = new SimpleHouseBuilder();
         director.buildSimpleHouse(simpleHouseBuilder);
-        House house = simpleHouseBuilder.getHouse();
+        SimpleHouse house = simpleHouseBuilder.getHouse();
 
         System.out.println(house);
     }
