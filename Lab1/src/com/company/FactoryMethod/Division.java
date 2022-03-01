@@ -1,9 +1,6 @@
 package com.company.FactoryMethod;
 
-public class Division implements Calculator{
-    private double a;
-    private double b;
-
+public class Division extends Calculator{
     public Division(double a, double b) {
         this.a = a;
         this.b = b;

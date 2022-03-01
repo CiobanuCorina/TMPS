@@ -1,9 +1,6 @@
 package com.company.FactoryMethod;
 
-public class Addition implements Calculator{
-    private double a;
-    private double b;
-
+public class Addition extends Calculator{
     public Addition(double a, double b) {
         this.a = a;
         this.b = b;

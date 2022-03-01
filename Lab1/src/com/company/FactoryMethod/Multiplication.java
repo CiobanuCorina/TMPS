@@ -1,9 +1,6 @@
 package com.company.FactoryMethod;
 
-public class Multiplication implements Calculator{
-    private double a;
-    private double b;
-
+public class Multiplication extends Calculator{
     public Multiplication(double a, double b) {
         this.a = a;
         this.b = b;

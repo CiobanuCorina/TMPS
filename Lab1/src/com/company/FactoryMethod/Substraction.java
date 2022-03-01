@@ -1,9 +1,6 @@
 package com.company.FactoryMethod;
 
-public class Substraction implements Calculator{
-    private double a;
-    private double b;
-
+public class Substraction extends Calculator{
     public Substraction(double a, double b) {
         this.a = a;
         this.b = b;

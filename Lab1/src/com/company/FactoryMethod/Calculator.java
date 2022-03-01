@@ -1,5 +1,7 @@
 package com.company.FactoryMethod;
 
-public interface Calculator {
-    public double calculate();
+public abstract class Calculator {
+    protected double a;
+    protected double b;
+    public abstract double calculate();
 }
