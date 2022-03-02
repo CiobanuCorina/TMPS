@@ -11,7 +11,7 @@ public class Answers {
         this.answer = new HashMap<String, String>();
     }
 
-    public static Answers getInstance() {
+    public synchronized static Answers getInstance() {
         if(Answers.instance == null) {
             instance = new Answers();
             return instance;
