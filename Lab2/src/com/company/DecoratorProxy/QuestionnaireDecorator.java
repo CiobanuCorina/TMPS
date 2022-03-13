@@ -1,4 +1,4 @@
-package com.company.Decorator;
+package com.company.DecoratorProxy;
 
 import java.util.List;
 
@@ -20,7 +20,7 @@ public class QuestionnaireDecorator extends IQuestionnaire{
     }
 
     @Override
-    public int check(String question, String answer) {
-        return wrappee.check(question, answer);
+    public int checkAnswer(String question, String answer) {
+        return wrappee.checkAnswer(question, answer);
     }
 }

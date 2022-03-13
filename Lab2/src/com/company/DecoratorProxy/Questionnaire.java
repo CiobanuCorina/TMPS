@@ -1,6 +1,5 @@
-package com.company.Decorator;
+package com.company.DecoratorProxy;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
@@ -12,7 +11,7 @@ public class Questionnaire extends IQuestionnaire{
     }
 
     @Override
-    public int check(String question, String answer) {
+    public int checkAnswer(String question, String answer) {
         List<String> answers = questions.get(question);
         if(answers.contains("*" + answer)) return 10;
         return 0;
@@ -24,7 +23,7 @@ public class Questionnaire extends IQuestionnaire{
         for (Map.Entry<String, List<String>> question : questions.entrySet()) {
             System.out.println(question.getKey());
             question.getValue().forEach((elem) -> System.out.println(elem.replaceAll("\\*", "")));
-            int points = check(question.getKey(), scanner.nextLine());
+            int points = checkAnswer(question.getKey(), scanner.nextLine());
             if(points == 0) System.out.println("Try again next time!");
             else System.out.printf("Great job! You got %d points\n", points);
             score += points;

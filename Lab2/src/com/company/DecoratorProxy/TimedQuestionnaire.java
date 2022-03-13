@@ -1,6 +1,5 @@
-package com.company.Decorator;
+package com.company.DecoratorProxy;
 
-import java.sql.Time;
 import java.util.*;
 
 public class TimedQuestionnaire extends QuestionnaireDecorator{
@@ -23,7 +22,7 @@ public class TimedQuestionnaire extends QuestionnaireDecorator{
                     System.exit(0);
                 }
             }, 5*1000);
-            int points = wrappee.check(question.getKey(), scanner.nextLine());
+            int points = wrappee.checkAnswer(question.getKey(), scanner.nextLine());
             if(points == 0) System.out.println("Try again next time!");
             else System.out.printf("Great job! You got %d points\n", points);
             score += points;

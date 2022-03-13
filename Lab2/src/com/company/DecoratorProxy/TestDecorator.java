@@ -1,8 +1,6 @@
-package com.company.Decorator;
+package com.company.DecoratorProxy;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class TestDecorator {
     public static void main(String[] args) {
