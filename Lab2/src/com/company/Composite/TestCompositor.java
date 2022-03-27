@@ -1,4 +1,4 @@
-package com.company.Compositor;
+package com.company.Composite;
 
 import java.io.IOException;
 
