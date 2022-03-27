@@ -1,33 +1,31 @@
 package com.company.DecoratorProxy;
 
-import java.util.*;
+import java.util.concurrent.*;
 
 public class TimedQuestionnaire extends QuestionnaireDecorator{
     public TimedQuestionnaire(IQuestionnaire wrappee) {
         super(wrappee);
     }
 
+
     @Override
     public void ask() {
-        Scanner scanner = new Scanner(System.in);
-        for (Map.Entry<String, List<String>> question : wrappee.questions.entrySet()) {
-            Timer timer = new Timer();
-            System.out.println(question.getKey());
-            question.getValue().forEach((elem) -> System.out.println(elem.replaceAll("\\*", "")));
-            timer.schedule(new TimerTask() {
-                @Override
-                public void run() {
-                    System.out.println("Time out");
-                    cancel();
-                    System.exit(0);
-                }
-            }, 5*1000);
-            int points = wrappee.checkAnswer(question.getKey(), scanner.nextLine());
-            if(points == 0) System.out.println("Try again next time!");
-            else System.out.printf("Great job! You got %d points\n", points);
-            score += points;
-            timer.cancel();
+        ExecutorService service = Executors.newSingleThreadExecutor();
+        try {
+            Future<Object> perform = service.submit(() -> {
+                wrappee.ask();
+                return "";
+            });
+
+            System.out.println(perform.get(10, TimeUnit.SECONDS));
+        } catch (final TimeoutException e) {
+            System.out.println("Time out. You lost.");
+            service.shutdown();
+            System.exit(0);
+        } catch (final Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            service.shutdown();
         }
-        System.out.printf("You got %d points", score);
     }
 }

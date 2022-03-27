@@ -6,8 +6,13 @@ public class QuestionnaireProxy extends IQuestionnaire{
     User user;
     IQuestionnaire questionnaire;
 
-    public QuestionnaireProxy(User user) {
-        this.questionnaire = new Questionnaire();
+    public QuestionnaireProxy(String type, User user) {
+        if(type.equals("simple")) {
+            this.questionnaire = new Questionnaire();
+        }
+        else if(type.equals("timed")) {
+            this.questionnaire = new TimedQuestionnaire(new Questionnaire());
+        }
         this.user = user;
     }
 
